@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -36,7 +37,7 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-8  h-12">
               <img className="w-[30px]" src="icon-five.png" alt="" />
-              <a href="/login">Pages</a>
+              <Link to="/login">Pages</Link>
             </li>
           </ul>
         </div>
