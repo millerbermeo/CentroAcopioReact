@@ -11,10 +11,12 @@ function Navbar() {
             <span className="mt-2 font-normal text-[18px]">Centro Acopio</span>
           </h1>
 
-          <div className="flex items-center justify-start gap-5 border-b pb-2 pt-10">
-            <img className="w-[30px]" src="apps-sharp.png" alt="" />
-            <h2 className="font-normal text-xl">Dashboard</h2>
-          </div>
+          <Link to="/">
+            <div className="flex items-center justify-start gap-5 border-b pb-2 pt-10">
+              <img className="w-[30px]" src="apps-sharp.png" alt="" />
+              <h2 className="font-normal text-xl">Dashboard</h2>
+            </div>
+          </Link>
         </div>
 
         <div className="flex w-full">
@@ -25,7 +27,7 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-8 border-t h-10">
               <img className="w-[30px]" src="icon-twopng.png" alt="" />
-              <a href="">Usuarios</a>
+              <Link to="/users">Usuarios</Link>
             </li>
             <li className="flex items-center gap-8  h-10">
               <img className="w-[30px]" src="icon-three.png" alt="" />
