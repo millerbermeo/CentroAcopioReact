@@ -36,7 +36,7 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-8  h-12">
               <img className="w-[30px]" src="icon-five.png" alt="" />
-              <a href="">Pages</a>
+              <a href="/login">Pages</a>
             </li>
           </ul>
         </div>
