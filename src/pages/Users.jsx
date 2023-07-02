@@ -11,9 +11,11 @@ function Users() {
         <Navbar />
         <Navtop />
         <div className="flex flex-col p-5 pt-24 w-[81%]">
-          <h1>Esta es la pagina Usuarios</h1>
+          <h1 className="text-[17px] text-[gray]">
+            Here you can manage user information:
+          </h1>
 
-          <div className="grid grid-cols-4 gap-2 place-items-center mt-5">
+          <div className="grid grid-cols-4 gap-2 place-items-center mt-6">
             <Link to="/">
               <CardUser
                 tCard="Create User"
@@ -24,26 +26,26 @@ function Users() {
             </Link>
             <Link to="/">
               <CardUser
-                tCard="User All"
+                tCard="See All Users"
                 bColor="indigo-500"
-                dCard="Aqui puedes crear un nuevo Usuario"
-                imgCard="boligrafo.gif"
+                dCard="Aqui puedes crear ver todos los Usuarios"
+                imgCard="usuario2.png"
               />
             </Link>
             <Link to="/">
               <CardUser
-                tCard="Search User"
+                tCard="Search Users"
                 bColor="indigo-500"
-                dCard="Aqui puedes crear un nuevo Usuario"
-                imgCard="boligrafo.gif"
+                dCard="Aqui puedes crear un buscar un Usuario"
+                imgCard="usuario3.png"
               />
             </Link>
             <Link to="/">
               <CardUser
-                tCard="Search User"
+                tCard="Edit Users"
                 bColor="indigo-500"
                 dCard="Aqui puedes crear un nuevo Usuario"
-                imgCard="boligrafo.gif"
+                imgCard="usuario4.png"
               />
             </Link>
           </div>
