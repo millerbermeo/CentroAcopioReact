@@ -1,6 +1,7 @@
 import React from "react";
 import fondo from "../../public/IMG-20220823-WA0019.jpg";
 import fondoLogin from "../../public/disparo-vertical-palmeras-playa-arena.jpg";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -32,14 +33,14 @@ function Login() {
             <div className="flex items-center justify-left gap-2 mt-8 text-xs text-gray-400">
               <input type="checkbox" /> Remember Me
             </div>
-            <a href="/">
+            <Link to="/">
               <button
                 type="submit"
                 className="w-full h-11 bg-[#00324d] rounded-full outline-none text-white font-bold mt-8"
               >
                 Login
               </button>
-            </a>
+            </Link>
 
             <div className="flex flex-col items-center justify-center border-t-[1px] border-grey-500 mt-6 pt-10 text-xs font-medium text-gray-400 ">
               <a href="">Forgot Password?</a>
