@@ -16,7 +16,7 @@ function Residuos() {
           </h1>
 
           <div className="w-full grid grid-cols-4 gap-2 place-items-center mt-6">
-            <Link to="/">
+            <Link to="/crear-residuo">
               <CardUser
                 tCard="Create Waste"
                 bColor="indigo-500"

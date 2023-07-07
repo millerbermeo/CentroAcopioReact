@@ -21,14 +21,18 @@ function Navbar() {
 
         <div className="flex w-full justify-center items-center">
           <ul className="w-full flex flex-col justify-center text-white">
-            <li className="flex items-center gap-12 h-12 text-center">
-              <img className="w-[30px]" src="icon-one.png" alt="" />
-              <Link to="/residuos">Residuos</Link>
-            </li>
-            <li className="flex items-center gap-12 border-t h-10">
-              <img className="w-[30px]" src="icon-twopng.png" alt="" />
-              <Link to="/users">Usuarios</Link>
-            </li>
+            <Link to="/residuos">
+              <li className="flex items-center gap-12 h-12 text-center">
+                <img className="w-[30px]" src="icon-one.png" alt="" />
+                Residuos
+              </li>
+            </Link>
+            <Link to="/users">
+              <li className="flex items-center gap-12 border-t h-10">
+                <img className="w-[30px]" src="icon-twopng.png" alt="" />
+                Usuarios
+              </li>
+            </Link>
             <li className="flex items-center gap-12  h-10">
               <img className="w-[30px]" src="icon-three.png" alt="" />
               <a href="">Reportes</a>
@@ -37,10 +41,12 @@ function Navbar() {
               <img className="w-[30px]" src="icon-four.png" alt="" />
               <a href="">Elementos</a>
             </li>
-            <li className="flex items-center gap-12  h-12">
-              <img className="w-[30px]" src="icon-five.png" alt="" />
-              <Link to="/">Pages</Link>
-            </li>
+            <Link to="/">
+              <li className="flex items-center gap-12  h-12">
+                <img className="w-[30px]" src="icon-five.png" alt="" />
+                Pages
+              </li>
+            </Link>
           </ul>
         </div>
 

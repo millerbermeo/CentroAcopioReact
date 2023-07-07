@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Users from "./pages/Users";
 import Residuos from "./pages/Residuos";
+import CrearResiduo from "./pages/CrearResiduo";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/users" element={<Users />} />
       <Route path="/residuos" element={<Residuos />} />
+      <Route path="/crear-residuo" element={<CrearResiduo />} />
     </Routes>
   );
 }
