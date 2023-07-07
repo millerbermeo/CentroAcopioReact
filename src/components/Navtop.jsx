@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navtop() {
   return (
@@ -6,7 +7,9 @@ function Navtop() {
       <div className="flex items-center gap-2 pr-3">
         <img className="w-[25px]" src="notifications-sharp.svg" alt="" />
         <span className="border-l pl-2 text-gray-400">Miller Rivera</span>
-        <img className="w-[30px]" src="undraw_profile.svg" alt="" />
+        <Link to="/login">
+          <img className="w-[30px]" src="undraw_profile.svg" alt="" />
+        </Link>
       </div>
     </div>
   );

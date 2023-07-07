@@ -12,34 +12,34 @@ function Navbar() {
           </h1>
 
           <Link to="/">
-            <div className="flex items-center justify-start gap-5 border-b pb-2 pt-10">
+            <div className="flex items-center justify-start gap-10 border-b pb-2 pt-10">
               <img className="w-[30px]" src="apps-sharp.png" alt="" />
               <h2 className="font-normal text-xl">Dashboard</h2>
             </div>
           </Link>
         </div>
 
-        <div className="flex w-full">
+        <div className="flex w-full justify-center items-center">
           <ul className="w-full flex flex-col justify-center text-white">
-            <li className="flex items-center gap-8 h-12 text-center">
+            <li className="flex items-center gap-12 h-12 text-center">
               <img className="w-[30px]" src="icon-one.png" alt="" />
-              <a href="">Residuos</a>
+              <Link to="/residuos">Residuos</Link>
             </li>
-            <li className="flex items-center gap-8 border-t h-10">
+            <li className="flex items-center gap-12 border-t h-10">
               <img className="w-[30px]" src="icon-twopng.png" alt="" />
               <Link to="/users">Usuarios</Link>
             </li>
-            <li className="flex items-center gap-8  h-10">
+            <li className="flex items-center gap-12  h-10">
               <img className="w-[30px]" src="icon-three.png" alt="" />
               <a href="">Reportes</a>
             </li>
-            <li className="flex items-center gap-8  border-b h-10">
+            <li className="flex items-center gap-12  border-b h-10">
               <img className="w-[30px]" src="icon-four.png" alt="" />
               <a href="">Elementos</a>
             </li>
-            <li className="flex items-center gap-8  h-12">
+            <li className="flex items-center gap-12  h-12">
               <img className="w-[30px]" src="icon-five.png" alt="" />
-              <Link to="/login">Pages</Link>
+              <Link to="/">Pages</Link>
             </li>
           </ul>
         </div>
