@@ -7,7 +7,7 @@ import CardUser from "../components/CardUser";
 function Users() {
   return (
     <>
-      <div className="w-full flex">
+      <div className="w-full flex justify-end">
         <Navbar />
         <Navtop />
         <div className="flex flex-col p-5 pt-24 w-[81%]">

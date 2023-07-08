@@ -1,13 +1,13 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Navtop from "../components/Navtop";
 import CardUser from "../components/CardUser";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Residuos() {
   return (
     <>
-      <div className="w-full flex">
+      <div className="w-full flex justify-end">
         <Navbar />
         <Navtop />
         <div className="flex flex-col p-5 pt-24 w-[81%]">
@@ -24,7 +24,7 @@ function Residuos() {
                 imgCard="desperdiciar.png"
               />
             </Link>
-            <Link to="/">
+            <Link to="/allresiduos">
               <CardUser
                 tCard="See All Waste"
                 bColor="indigo-500"

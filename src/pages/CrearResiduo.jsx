@@ -1,7 +1,59 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // version 5.2.0
 
 function CrearResiduo() {
+  const navigate = useNavigate();
+
+  const [nombre_residuo, setnombre_residuo] = useState("");
+  const [tipo_residuo, settipo_residuo] = useState("");
+  const [cantidad_residuo, setcantidad_residuo] = useState("");
+  const [deposito, setdeposito] = useState("");
+  const [descripcion_residuo, setdescripcion_residuo] = useState("");
+  const [area, setarea] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === "nombre_residuo") {
+      setnombre_residuo(value);
+    } else if (name === "tipo_residuo") {
+      settipo_residuo(value);
+    } else if (name === "cantidad_residuo") {
+      setcantidad_residuo(value);
+    } else if (name === "deposito") {
+      setdeposito(value);
+    } else if (name === "descripcion_residuo") {
+      setdescripcion_residuo(value);
+    } else if (name === "area") {
+      setarea(value);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const data = {
+      nombre_residuo,
+      tipo_residuo,
+      cantidad_residuo,
+      descripcion_residuo,
+      deposito,
+      area,
+    };
+
+    axios
+      .post("http://127.0.0.1:8000/api/residuos", data)
+      .then((response) => {
+        console.log(response.data);
+        // Aquí puedes realizar acciones con la respuesta de la API
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    navigate("/residuos");
+  };
+
   return (
     <>
       <div className="w-full h-screen bg-[#111827] pt-12">
@@ -11,7 +63,7 @@ function CrearResiduo() {
             This information will be displayed publicly so be careful what you
             share.
           </p>
-          <form action="post">
+          <form onSubmit={handleSubmit}>
             <div className="flex p-3 gap-0 w-full justify-center items-center">
               {" "}
               <p className="w-full flex flex-col">
@@ -20,23 +72,26 @@ function CrearResiduo() {
                   type="text"
                   id="nombre_residuo"
                   name="nombre_residuo"
+                  value={nombre_residuo}
+                  onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-2 text-[#5f727e]"
                 />
               </p>
               <p>
-                <label htmlFor="">Tipo Residuo</label>
+                <label htmlFor="tipo_residuo">Tipo Residuo</label>
                 <select
                   id="tipo_residuo"
                   name="tipo_residuo"
+                  value={tipo_residuo}
+                  required
+                  onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
-                  <option value="value1">Aprovechables</option>
-                  <option value="value2" selected>
-                    No Aprovechables
-                  </option>
-                  <option value="value3">Infecciosos</option>
-                  <option value="value4">Químicos</option>
-                  <option value="value5">Otros</option>
+                  <option value="Aprovechables">Aprovechables</option>
+                  <option value="NoAprovechables">No Aprovechables</option>
+                  <option value="Quimicos">Químicos</option>
+                  <option value="Infecciosos">Infecciosos</option>
+                  <option value="Otros">Otros</option>
                 </select>
               </p>
             </div>
@@ -48,16 +103,20 @@ function CrearResiduo() {
                   type="number"
                   id="cantidad_residuo"
                   name="cantidad_residuo"
+                  value={cantidad_residuo}
+                  onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-2 text-[#5f727e]"
                 />
               </p>
               <p className="flex flex-col">
                 <label htmlFor="">Descripcion Residuo</label>
                 <textarea
-                  name="textarea"
-                  rows="5"
-                  cols="60"
-                  className="bg-[#1d2432] outline-none rounded-lg border border-gray-700 pl-2 text-[#5f727e]"
+                  type="text"
+                  id="descripcion_residuo"
+                  name="descripcion_residuo"
+                  value={descripcion_residuo}
+                  onChange={handleChange}
+                  className="bg-[#1d2432] h-20  outline-none rounded-lg border border-gray-700 pl-2 text-[#5f727e]"
                 ></textarea>
               </p>
             </div>
@@ -65,54 +124,50 @@ function CrearResiduo() {
             <div className="flex p-3 gap-4 w-full">
               {" "}
               <p>
-                <label htmlFor="">Deposito</label>
+                <label htmlFor="deposito">Deposito</label>
                 <select
-                  id="tipo_residuo"
-                  name="tipo_residuo"
+                  id="deposito"
+                  required
+                  name="deposito"
+                  value={deposito}
+                  onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
-                  <option value="value1">Deposito A</option>
-                  <option value="value2">Deposito B</option>
-                  <option value="value3" selected>
-                    Desposito C
-                  </option>
+                  <option value="DepositoA">Deposito A</option>
+                  <option value="DepositoB">Deposito B</option>
+                  <option value="DepositoC">Desposito C</option>
                 </select>
               </p>
               <p>
-                <label htmlFor="">Area Recoleccion</label>
+                <label htmlFor="area">Area Recoleccion</label>
                 <select
-                  id="tipo_residuo"
-                  name="tipo_residuo"
+                  id="area"
+                  required
+                  name="area"
+                  value={area}
+                  onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
-                  <option value="value1">ENNCC</option>
-                  <option value="value2" selected>
-                    Complejo Deportivo
-                  </option>
-                  <option value="value3">Gastronomia</option>
-                  <option value="value4">Agroindustria</option>
-                  <option value="value5">Laboratorios</option>
-                  <option value="value3">Sennova</option>
-                  <option value="value4">Agroindustria</option>
-                  <option value="value5">Areas Comunes</option>
-                  <option value="value5">Enfermeria</option>
+                  <option value="ENNCC">ENNCC</option>
+                  <option value="ComplejoDeportivo">Complejo Deportivo</option>
+                  <option value="Gastronomia">Gastronomia</option>
+                  <option value="Agroindustria">Agroindustria</option>
+                  <option value="Laboratorios">Laboratorios</option>
+                  <option value="Sennova">Sennova</option>
+                  <option value="AreasComunes">Areas Comunes</option>
+                  <option value="Enfermeria">Enfermeria</option>
                 </select>
               </p>
             </div>
-          </form>
-          <div className="">
-            <Link to="/">
-              {" "}
-              <div class="p-3">
-                <button
-                  class="shadow bg-[#1d2432] hover:bg-[#1d2432] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="submit"
-                >
+
+            <div className="">
+              <div className="p-3">
+                <button className="shadow bg-[#1d2432] hover:bg-[#1d2432] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                   Sign Up
                 </button>
               </div>
-            </Link>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </>
