@@ -32,7 +32,7 @@ function Residuos() {
                 imgCard="papelera-de-reciclaje.png"
               />
             </Link>
-            <Link to="/">
+            <Link to="/showresiduos">
               <CardUser
                 tCard="Search Waste"
                 bColor="indigo-500"

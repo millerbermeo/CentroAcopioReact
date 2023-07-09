@@ -87,6 +87,8 @@ function CrearResiduo() {
                   onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
+                  {" "}
+                  <option value=""></option>
                   <option value="Aprovechables">Aprovechables</option>
                   <option value="NoAprovechables">No Aprovechables</option>
                   <option value="Quimicos">Químicos</option>
@@ -133,6 +135,8 @@ function CrearResiduo() {
                   onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
+                  {" "}
+                  <option value=""></option>
                   <option value="DepositoA">Deposito A</option>
                   <option value="DepositoB">Deposito B</option>
                   <option value="DepositoC">Desposito C</option>
@@ -148,6 +152,8 @@ function CrearResiduo() {
                   onChange={handleChange}
                   className="bg-[#1d2432] outline-none w-96 h-10 rounded-lg border border-gray-700 pl-1 pt-3 flex flex-col justify-center items-center"
                 >
+                  {" "}
+                  <option value=""></option>
                   <option value="ENNCC">ENNCC</option>
                   <option value="ComplejoDeportivo">Complejo Deportivo</option>
                   <option value="Gastronomia">Gastronomia</option>
