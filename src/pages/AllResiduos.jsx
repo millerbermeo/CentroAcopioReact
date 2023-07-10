@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosClient from "../axios-client";
+import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Navtop from "../components/Navtop";
 
 function AllResiduos() {
   const [data, setData] = useState([]);
-
+  // const navigate = useNavigate();
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/residuos")
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    axiosClient.get("/residuos").then((response) => {
+      setData(response.data);
+    });
   }, []);
+
   return (
     <>
       <div className="w-full flex justify-end">

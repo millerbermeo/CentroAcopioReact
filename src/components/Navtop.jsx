@@ -21,7 +21,7 @@ function Navtop() {
         <p className="absolute top-8 left-72">{formattedDate}</p>
         <img className="w-[25px]" src="notifications-sharp.svg" alt="" />
         <span className="border-l pl-2 text-gray-400">Miller Rivera</span>
-        <Link to="/login">
+        <Link to="/logout">
           <img className="w-[30px]" src="undraw_profile.svg" alt="" />
         </Link>
       </div>

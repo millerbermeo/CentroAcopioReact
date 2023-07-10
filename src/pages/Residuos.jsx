@@ -40,7 +40,7 @@ function Residuos() {
                 imgCard="material-peligroso.png"
               />
             </Link>
-            <Link to="/">
+            <Link to="/edit">
               <CardUser
                 tCard="Edit Waste"
                 bColor="indigo-500"
@@ -48,7 +48,7 @@ function Residuos() {
                 imgCard="gestion-de-residuos.png"
               />
             </Link>
-            <Link to="/">
+            <Link to="/entrada">
               <CardUser
                 tCard="Waste Input"
                 bColor="indigo-500"
@@ -56,7 +56,7 @@ function Residuos() {
                 imgCard="ingresar (1).png"
               />
             </Link>
-            <Link to="/">
+            <Link to="/salida">
               <CardUser
                 tCard="Waste Output"
                 bColor="indigo-500"

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
 import Navbar from "../components/Navbar";
 import Navtop from "../components/Navtop";
+import axiosClient from "../axios-client";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function ShowResiduo() {
@@ -9,16 +9,16 @@ function ShowResiduo() {
   const [elementId, setElementId] = useState("");
 
   const handleSearch = () => {
-    axios
-      .get(`http://127.0.0.1:8000/api/residuos/${elementId}`)
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    axiosClient.get(`/residuos/${elementId}`).then((response) => {
+      setData(response.data);
+    });
   };
+
+  // useEffect(() => {
+  //   handleSearch();
+  // }, [elementId]);
+
+  // ...
 
   return (
     <>
@@ -39,7 +39,7 @@ function ShowResiduo() {
               <div className="w-full flex justify-end items-end gap-5 mt-6">
                 <Link to="/residuos">Cancelar</Link>
                 <button
-                  class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                  className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
                   onClick={handleSearch}
                 >
                   Buscar
