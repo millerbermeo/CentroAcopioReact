@@ -16,9 +16,9 @@ function Navtop() {
 
   const formattedDate = date.toLocaleString();
   return (
-    <div className="w-[100%] bg-[#F7F9FD] h-20 flex justify-end shadow-lg fixed top-0 right-0">
+    <div className="w-[100%] z-10 bg-[#F7F9FD] h-20 flex justify-end shadow-lg fixed top-0 right-0">
       <div className="flex items-center gap-2 pr-3 w-full justify-end">
-        <p className="absolute top-8 left-72">{formattedDate}</p>
+        <p className="left-20 lg:left-72 absolute top-8 ">{formattedDate}</p>
         <img className="w-[25px]" src="notifications-sharp.svg" alt="" />
         <span className="border-l pl-2 text-gray-400">Miller Rivera</span>
         <Link to="/logout">

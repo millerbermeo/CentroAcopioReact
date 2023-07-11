@@ -12,6 +12,7 @@ import PrivateRoutes from "./utils/PrivateRoutes";
 import EditResiduo from "./pages/EditResiduo";
 import EntradaResiduos from "./pages/EntradaResiduos";
 import SalidaResiduos from "./pages/SalidaResiduos";
+import CrearUsuario from "./pages/crudUser/CrearUsuario";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/edit" element={<EditResiduo />} />
         <Route path="/entrada" element={<EntradaResiduos />} />
         <Route path="/salida" element={<SalidaResiduos />} />
+        <Route path="/crear-usuario" element={<CrearUsuario />} />
       </Route>
     </Routes>
   );

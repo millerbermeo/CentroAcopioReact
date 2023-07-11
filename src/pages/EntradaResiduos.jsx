@@ -22,7 +22,7 @@ function EntradaResiduos() {
         <Navtop />
 
         <div className="w-72 h-44 border border-gray-300 rounded-xl shadow-xl p-3">
-          <h1 className="font-bold text-lg">Ingreso Cantidad +</h1>
+          <h1 className="font-bold text-lg">Ingreso Cantidad</h1>
           <input
             type="number"
             value={numId}

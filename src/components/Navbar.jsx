@@ -4,17 +4,21 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <div className="w-[19%] fixed left-0 h-screen text-center bg-[#00324D] flex flex-col items-center justify-between p-5 pt-4 z-10">
+      <div className="w-[70px] z-20 overflow-hidden lg:w-[19%] fixed left-0 h-screen text-center bg-[#00324D] flex flex-col items-center justify-between p-5 pt-4">
         <div className="w-full flex flex-col gap-2 text-white">
           <h1 className="w-full flex gap-2 items-center justify-center font-bold text-[30px]">
             CAS
-            <span className="mt-2 font-normal text-[18px]">Centro Acopio</span>
+            <span className="hidden lg:block mt-2 font-normal text-[18px]">
+              Centro Acopio
+            </span>
           </h1>
 
-          <Link to="/">
+          <Link to="/dashboard">
             <div className="flex items-center justify-start gap-10 border-b pb-2 pt-10">
               <img className="w-[30px]" src="apps-sharp.png" alt="" />
-              <h2 className="font-normal text-xl">Dashboard</h2>
+              <h2 className="hidden lg:block font-normal  text-xl">
+                Dashboard
+              </h2>
             </div>
           </Link>
         </div>
@@ -50,13 +54,16 @@ function Navbar() {
           </ul>
         </div>
 
-        <div className="w-full flex items-center justify-center gap-2 mr-8 text-white">
+        <div
+          id="final"
+          className="w-full flex items-center justify-center gap-2 text-white"
+        >
           <img
             className="w-[30px] decoration-white"
             src="icon-six.png"
             alt=""
           />
-          <a href="">
+          <a className="hidden lg:block " href="">
             <h2>Centro de Ayuda</h2>
           </a>
         </div>

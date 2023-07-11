@@ -39,10 +39,10 @@ function Login() {
         <div className="absolute flex">
           <form onSubmit={handleSubmit} className="flex">
             <div
-              className="bg-cyan-800 w-[420px] h-[550px] bg-cover bg-center"
+              className="hidden lg:block bg-cyan-800 w-[420px] h-[550px] bg-cover bg-center"
               style={{ backgroundImage: `url(${fondoLogin})` }}
             ></div>
-            <div className="bg-white w-[420px] h-[550px] px-14 pt-20 flex flex-col shadow-lg">
+            <div className="w-[500px] h-screen bg-white lg:w-[420px] lg:h-[550px] px-14 pt-20 flex flex-col shadow-lg">
               <h1 className="text-center font-bold text-2xl">Welcome Back!</h1>
               <div className="flex flex-col gap-5 h-auto mt-10 text-xs">
                 <input
